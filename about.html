@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+:root {
+  --modal-duration: 1s;
+  --modal-color: #428bca;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f4f4;
+  font-size: 17px;
+  line-height: 1.6;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-image: url('IT home/hedrabad.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.button {
+  background: #000000;
+  padding: 1em 2em;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #3876ac;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  margin: 10% auto;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+.modal-header h2,
+.modal-footer h3 {
+  margin: 0;
+}
+
+.modal-header {
+  background: var(--modal-color);
+  padding: 15px;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.modal-body {
+  padding: 10px 20px;
+  background: #fff;
+}
+
+.modal-footer {
+  background: var(--modal-color);
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.close {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+a{
+    text-decoration: none;
+    color: white;
+
+}
+a:hover{
+	color: rgba(226, 2, 2, 0.897);
+    font-size: 22px;
+    
+}
+</style>
+<body>
+    <button id="modal-btn" class="button"> About Page Click </button>
+
+
+
+  <div id="my-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>IT Company Jobvista.in </h2>
+      </div>
+      <div class="modal-body">
+        <h3>About</h3>
+       <p>Data that define what the company is. These data include facts about what the company does, its brands, sales and other financial facts, as well as where the company is located and the names of principle officers.</p>
+<p>Basic and financial information: name of company, contact info, location, industrial activities and classification codes, number of employees, board of management, some financial data</p>
+<p>IT companies are responsible for making sure that operations are running the way they should. They ensure that devices are working properly and that data is secure. IT is also responsible for installing new software, hardware and providing technical support.</p>
+   <p>What is the IT company about?
+    Simply put, an IT company supervises the use of sending, storing, and retrieving information. Computers, storage, networking, and other tangible tools, systems, and processes are some of the examples that IT companies use to store or utilize information</p> 
+<p>What is the role of the IT department?
+    The IT Department: Roles & Responsibilities to Know
+    IT departments are responsible for maintaining the hardware and software systems within an organization. This includes configuring and updating software applications, employee devices, servers, databases, and other IT infrastructure</p>
+</div>
+      <div class="modal-footer">
+        <a href="index.php">Back to  Home</a>
+      </div>
+    </div>
+  </div>
+
+   
+
+  <script>
+
+
+// Get DOM Elements
+const modal = document.querySelector('#my-modal');
+const modalBtn = document.querySelector('#modal-btn');
+const closeBtn = document.querySelector('.close');
+
+// Events
+modalBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
+
+// Open
+function openModal() {
+  modal.style.display = 'block';
+}
+
+// Close
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Close If Outside Click
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+
+  </script>
+</body>
+</html>
